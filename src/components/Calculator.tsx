@@ -13,20 +13,19 @@ export default function Calculator() {
     setCalcState({ total: calcState.total + value, previousTotal: calcState.total});
   };
 
-  return (
-    <div className="calculator">
-      <p>
-        <input
-          type="text"
-          id="value"
-          name="value"
-          onChange={(event) => { setValue(Number(event.target.value)); }}
-          value={value}
-        />
-      </p>
-      <button className="btn btn-primary" type="button" onClick={handleAddClick}> Add </button>
-      <p className="card-text">Total: {calcState.total}</p>
-      <p className="card-text">Previous Total: {calcState.previousTotal}</p>
-    </div>
-  );
+  return(<div className="calculator">
+        <h2>Simple Calculator</h2>
+        <p>
+            <input
+            type="text"
+            id="value"
+            name="value"
+            onChange={(event) => { setValue(Number(event.target.value)); }}
+            value={value}
+            />
+        </p>
+        <button className="btn btn-primary" type="button" onClick={handleAddClick}> Add </button>
+        <p className="card-text">Total: {calcState.total}</p>
+        <p className="card-text">Previous Total: {calcState.previousTotal}</p>
+        </div>);
 }
